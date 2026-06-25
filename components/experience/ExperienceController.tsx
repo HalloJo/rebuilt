@@ -15,6 +15,12 @@ const variants = {
 
 export function ExperienceController() {
   const [section, setSection] = useState(0)
+  const [heroSeen, setHeroSeen] = useState(false)
+
+  function goNext() {
+    setHeroSeen(true)
+    setSection(1)
+  }
 
   return (
     <div className="h-full">
@@ -29,7 +35,7 @@ export function ExperienceController() {
             transition={{ duration: 0.6, ease: EASE }}
             className="h-full"
           >
-            <LandingHero onNext={() => setSection(1)} />
+            <LandingHero onNext={goNext} skipAnimation={heroSeen} />
           </motion.div>
         )}
 

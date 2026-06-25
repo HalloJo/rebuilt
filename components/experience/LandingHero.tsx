@@ -18,7 +18,8 @@ const BUTTON_DELAY = 3.5
 
 const EASE = [0.25, 0.46, 0.45, 0.94] as const
 
-function fadeUp(delay: number) {
+function fadeUp(delay: number, skip: boolean) {
+  if (skip) return { initial: { opacity: 1, y: 0 }, animate: { opacity: 1, y: 0 } }
   return {
     initial: { opacity: 0, y: 14 },
     animate: { opacity: 1, y: 0 },
@@ -33,7 +34,13 @@ const LINE_STYLES: Record<StoryLine['variant'], string> = {
   emphasis: 'text-accent-gradient text-2xl font-semibold sm:text-3xl',
 }
 
-export function LandingHero({ onNext }: { onNext: () => void }) {
+export function LandingHero({
+  onNext,
+  skipAnimation = false,
+}: {
+  onNext: () => void
+  skipAnimation?: boolean
+}) {
   return (
     <main
       className="relative z-10 flex h-full flex-col items-center justify-center px-6 py-24"
@@ -43,13 +50,17 @@ export function LandingHero({ onNext }: { onNext: () => void }) {
         {LINES.map((line, i) => {
           const Tag = line.variant === 'heading' ? motion.h1 : motion.p
           return (
-            <Tag key={line.text} {...fadeUp(LINE_DELAYS[i])} className={LINE_STYLES[line.variant]}>
+            <Tag
+              key={line.text}
+              {...fadeUp(LINE_DELAYS[i], skipAnimation)}
+              className={LINE_STYLES[line.variant]}
+            >
               {line.text}
             </Tag>
           )
         })}
 
-        <motion.div {...fadeUp(BUTTON_DELAY)} className="pt-8">
+        <motion.div {...fadeUp(BUTTON_DELAY, skipAnimation)} className="pt-8">
           <button
             onClick={onNext}
             className="group text-foreground hover:border-accent/40 hover:shadow-accent/10 focus-visible:ring-accent focus-visible:ring-offset-background inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
