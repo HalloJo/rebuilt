@@ -5,12 +5,12 @@ import { ArrowRight } from 'lucide-react'
 import type { StoryLine } from '@/types'
 
 const LINES: StoryLine[] = [
-  { text: 'A second chance.', variant: 'label' },
+  { text: 'Een tweede kans.', variant: 'label' },
   { text: 'Hey LeadLogic 👋', variant: 'heading' },
-  { text: 'Your feedback was clear. And you were right.', variant: 'body' },
-  { text: 'I forgot to show myself.', variant: 'body' },
-  { text: 'So instead of rewriting my motivation...', variant: 'body' },
-  { text: 'I rebuilt it.', variant: 'emphasis' },
+  { text: 'De feedback was accuraat. En jullie hadden gelijk.', variant: 'body' },
+  { text: 'Mijn motivatie was niet duidelijk.', variant: 'body' },
+  { text: 'Dus in plaats van het te herschrijven...', variant: 'body' },
+  { text: 'Heb ik het herbouwd.', variant: 'emphasis' },
 ]
 
 const LINE_DELAYS = [0.3, 0.9, 1.5, 2.1, 2.7, 3.3]
@@ -65,7 +65,7 @@ export function LandingHero({
             onClick={onNext}
             className="group text-foreground hover:border-accent/40 hover:shadow-accent/10 focus-visible:ring-accent focus-visible:ring-offset-background inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
           >
-            Start Experience
+            Start
             <ArrowRight
               size={16}
               className="text-accent transition-transform duration-200 group-hover:translate-x-0.5"

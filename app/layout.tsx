@@ -32,7 +32,7 @@ export default function RootLayout({
           className="pointer-events-none fixed inset-0 z-0"
           style={{
             background:
-              'radial-gradient(ellipse 90% 60% at 50% -5%, rgba(255, 107, 43, 0.08), transparent 70%)',
+              'radial-gradient(ellipse 90% 60% at 50% -5%, rgba(255, 107, 43, 0.20), transparent 70%)',
           }}
         />
         {/* Film-grain noise overlay */}

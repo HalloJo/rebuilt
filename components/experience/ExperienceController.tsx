@@ -60,7 +60,7 @@ export function ExperienceController() {
                   size={15}
                   className="text-accent transition-transform duration-200 group-hover:-translate-x-0.5"
                 />
-                Back
+                Terug
               </button>
 
               <button
@@ -71,7 +71,7 @@ export function ExperienceController() {
                   size={15}
                   className="text-accent transition-transform duration-200 group-hover:-rotate-45"
                 />
-                To start
+                Naar begin
               </button>
             </div>
           </motion.div>
