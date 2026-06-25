@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
 })
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
   subsets: ['latin'],
 })
 
@@ -23,18 +23,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} dark h-full antialiased`}
-    >
-      <body className="relative flex min-h-full flex-col bg-[#080808]">
-        {/* Radial glow — top-center, barely perceptible */}
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-full`}>
+      <body className="relative flex min-h-full flex-col">
+        {/* Radial glow — top-center, accent tinted */}
         <div
           aria-hidden="true"
           className="pointer-events-none fixed inset-0 z-0"
           style={{
             background:
-              'radial-gradient(ellipse 90% 60% at 50% -5%, oklch(0.22 0.025 265 / 0.18), transparent 70%)',
+              'radial-gradient(ellipse 90% 60% at 50% -5%, rgba(255, 107, 43, 0.08), transparent 70%)',
           }}
         />
         {/* Film-grain noise overlay */}
