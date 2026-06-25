@@ -18,13 +18,16 @@ function formatUptime(ms: number): string {
 }
 
 export function Nav() {
-  const [uptime, setUptime] = useState(() => formatUptime(Date.now() - BORN_AT.getTime()))
+  const [uptime, setUptime] = useState('')
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setUptime(formatUptime(Date.now() - BORN_AT.getTime()))
-    }, 1000)
-    return () => clearInterval(id)
+    const tick = () => setUptime(formatUptime(Date.now() - BORN_AT.getTime()))
+    const init = setTimeout(tick, 0)
+    const id = setInterval(tick, 1000)
+    return () => {
+      clearTimeout(init)
+      clearInterval(id)
+    }
   }, [])
 
   return (

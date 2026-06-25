@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-full`}>
-      <body className="relative flex min-h-full flex-col">
+    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} h-svh overflow-hidden`}>
+      <body className="relative h-full overflow-hidden">
         {/* Radial glow — top-center, accent tinted */}
         <div
           aria-hidden="true"

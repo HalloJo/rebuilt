@@ -13,7 +13,7 @@ const LINES: StoryLine[] = [
   { text: 'I rebuilt it.', variant: 'emphasis' },
 ]
 
-const LINE_DELAYS = [0.3, 0.9, 1.5, 2.1, 2.9]
+const LINE_DELAYS = [0.3, 0.9, 1.5, 2.1, 2.7, 3.3]
 const BUTTON_DELAY = 3.5
 
 const EASE = [0.25, 0.46, 0.45, 0.94] as const
@@ -33,14 +33,10 @@ const LINE_STYLES: Record<StoryLine['variant'], string> = {
   emphasis: 'text-accent-gradient text-2xl font-semibold sm:text-3xl',
 }
 
-export function LandingHero() {
-  const handleStart = () => {
-    document.getElementById('next-section')?.scrollIntoView({ behavior: 'smooth' })
-  }
-
+export function LandingHero({ onNext }: { onNext: () => void }) {
   return (
     <main
-      className="relative z-10 flex min-h-svh flex-col items-center justify-center px-6 py-24"
+      className="relative z-10 flex h-full flex-col items-center justify-center px-6 py-24"
       aria-label="Introduction"
     >
       <div className="w-full max-w-2xl space-y-6 text-center">
@@ -55,7 +51,7 @@ export function LandingHero() {
 
         <motion.div {...fadeUp(BUTTON_DELAY)} className="pt-8">
           <button
-            onClick={handleStart}
+            onClick={onNext}
             className="group text-foreground hover:border-accent/40 hover:shadow-accent/10 focus-visible:ring-accent focus-visible:ring-offset-background inline-flex cursor-pointer items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium backdrop-blur-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
           >
             Start Experience
