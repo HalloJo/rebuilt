@@ -79,9 +79,9 @@ export const LOG_ENTRIES: LogEntry[] = [
   {
     id: 'rebuilt',
     time: '26-06 | 15:34',
-    title: 'Rebuilt gemaakt en deployed',
-    description: 'Live op Vercel — rebuilt.vercel.app',
-    url: 'https://rebuilt.vercel.app',
-    preview: { type: 'vercel', meta: 'rebuilt.vercel.app' },
+    title: 'Rebuilt gemaakt en live gezet',
+    description: 'Live op Vercel — rebuilt-omega.vercel.app',
+    url: 'https://rebuilt-omega.vercel.app/',
+    preview: { type: 'vercel', meta: 'rebuilt-omega.vercel.app' },
   },
 ]
