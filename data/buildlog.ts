@@ -80,8 +80,8 @@ export const LOG_ENTRIES: LogEntry[] = [
     id: 'rebuilt',
     time: '26-06 | 15:34',
     title: 'Rebuilt gemaakt en deployed',
-    description: 'Live op Vercel — rebuilt-vibe.vercel.app',
-    url: 'https://rebuilt-vibe.vercel.app',
-    preview: { type: 'vercel', meta: 'rebuilt-vibe.vercel.app' },
+    description: 'Live op Vercel — rebuilt.vercel.app',
+    url: 'https://rebuilt.vercel.app',
+    preview: { type: 'vercel', meta: 'rebuilt.vercel.app' },
   },
 ]

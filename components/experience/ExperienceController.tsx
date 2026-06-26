@@ -33,8 +33,10 @@ function wrap(key: string, children: React.ReactNode) {
 export function ExperienceController() {
   const [section, setSection] = useState(0)
   const [heroSeen, setHeroSeen] = useState(false)
+  const [whyStartAtEnd, setWhyStartAtEnd] = useState(false)
 
-  function toSection(n: number) {
+  function toSection(n: number, fromEnd = false) {
+    setWhyStartAtEnd(n === 1 && fromEnd)
     setSection(n)
   }
 
@@ -54,10 +56,20 @@ export function ExperienceController() {
           )}
 
         {section === 1 &&
-          wrap('why', <WhyLeadLogic onNext={() => toSection(2)} onBack={() => toSection(0)} />)}
+          wrap(
+            'why',
+            <WhyLeadLogic
+              onNext={() => toSection(2)}
+              onBack={() => toSection(0)}
+              startAtEnd={whyStartAtEnd}
+            />
+          )}
 
         {section === 2 &&
-          wrap('buildlog', <BuildLog onNext={() => toSection(3)} onBack={() => toSection(1)} />)}
+          wrap(
+            'buildlog',
+            <BuildLog onNext={() => toSection(3)} onBack={() => toSection(1, true)} />
+          )}
       </AnimatePresence>
     </div>
   )

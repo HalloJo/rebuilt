@@ -135,10 +135,11 @@ const LINE_STYLES: Record<LineStyle, string> = {
 interface Props {
   onNext: () => void
   onBack: () => void
+  startAtEnd?: boolean
 }
 
-export function WhyLeadLogic({ onNext, onBack }: Props) {
-  const [chapter, setChapter] = useState(0)
+export function WhyLeadLogic({ onNext, onBack, startAtEnd = false }: Props) {
+  const [chapter, setChapter] = useState(startAtEnd ? CHAPTERS.length - 1 : 0)
   const current = CHAPTERS[chapter]
   const isLast = chapter === CHAPTERS.length - 1
   const lineCount = current.lines?.length ?? current.qualities?.length ?? 0
