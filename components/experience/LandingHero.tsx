@@ -11,10 +11,11 @@ const LINES: StoryLine[] = [
   { text: 'Mijn motivatie was niet duidelijk.', variant: 'body' },
   { text: 'Dus in plaats van het te herschrijven...', variant: 'body' },
   { text: 'Heb ik het herbouwd.', variant: 'emphasis' },
+  { text: 'Next.js · Framer Motion · Claude Code.', variant: 'label' },
 ]
 
-const LINE_DELAYS = [0.3, 0.9, 1.5, 2.1, 2.7, 3.3]
-const BUTTON_DELAY = 3.5
+const LINE_DELAYS = [0.3, 0.9, 1.5, 2.1, 2.7, 3.3, 3.9]
+const BUTTON_DELAY = 4.4
 
 const EASE = [0.25, 0.46, 0.45, 0.94] as const
 

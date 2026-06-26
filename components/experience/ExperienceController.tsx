@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { LandingHero } from './LandingHero'
 import { WhyLeadLogic } from './WhyLeadLogic'
 import { BuildLog } from './BuildLog'
+import { ClosingSection } from './ClosingSection'
 
 const EASE = [0.25, 0.46, 0.45, 0.94] as const
 
@@ -70,6 +71,8 @@ export function ExperienceController() {
             'buildlog',
             <BuildLog onNext={() => toSection(3)} onBack={() => toSection(1, true)} />
           )}
+
+        {section === 3 && wrap('closing', <ClosingSection onBack={() => toSection(2, true)} />)}
       </AnimatePresence>
     </div>
   )
