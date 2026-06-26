@@ -57,18 +57,21 @@ const CHAPTERS: Chapter[] = [
   {
     lines: [
       { text: 'Dat is hoe ik werk.', style: 'heading' },
-      { text: 'Als een idee me enthousiast maakt...', style: 'body' },
-      { text: 'wil ik het zo snel mogelijk tastbaar maken.', style: 'body' },
-      { text: 'Niet volgende week. Niet volgende maand.', style: 'body' },
-      { text: 'Vandaag.', style: 'emphasis' },
+      {
+        text: 'Als een idee me enthousiast maakt, wil ik het zo snel mogelijk tastbaar maken',
+        style: 'body',
+      },
+      { text: 'Niet volgende week. Niet volgende maand. Vandaag.', style: 'body' },
+      { text: 'Maar daardoor vergat ik duidelijk mijn motivatie te noteren.', style: 'body' },
+      { text: 'Maar jullie waren eerlijk.', style: 'emphasis' },
     ],
   },
   // 2 — Why LeadLogic
   {
     lines: [
       { text: 'Juist daarom sprak LeadLogic mij aan.', style: 'heading' },
-      { text: 'Niet omdat jullie alleen met AI werken.', style: 'body' },
-      { text: 'Maar omdat jullie mensen zoeken die bouwen.', style: 'body' },
+      { text: 'Om jullie eerlijkheid. Omdat jullie mensen zoeken die bouwen.', style: 'body' },
+      { text: 'En omdat ik dit nog even mocht maken.', style: 'body' },
     ],
   },
   // 3 — The qualities
@@ -101,7 +104,10 @@ const CHAPTERS: Chapter[] = [
         Illustration: LaunchIllustration,
       },
       { text: 'AI als co-pilot, niet als vervanging.', Illustration: DuoIllustration },
-      { text: 'Next.js, React.js, TypeScript & Tailwind CSS.', Illustration: StackIllustration },
+      {
+        text: 'Next.js, React.js, TypeScript, Tailwind & veel meer.',
+        Illustration: StackIllustration,
+      },
       {
         text: 'Design, animaties en user experience — met aandacht voor detail.',
         Illustration: EyeIllustration,
