@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { LandingHero } from './LandingHero'
 import { WhyLeadLogic } from './WhyLeadLogic'
+import { BuildLog } from './BuildLog'
 
 const EASE = [0.25, 0.46, 0.45, 0.94] as const
 
@@ -56,16 +57,7 @@ export function ExperienceController() {
           wrap('why', <WhyLeadLogic onNext={() => toSection(2)} onBack={() => toSection(0)} />)}
 
         {section === 2 &&
-          wrap(
-            'timeline',
-            <section
-              id="timeline"
-              aria-label="Tijdlijn"
-              className="flex h-full items-center justify-center"
-            >
-              <p className="text-muted font-mono text-sm">Tijdlijn komt eraan...</p>
-            </section>
-          )}
+          wrap('buildlog', <BuildLog onNext={() => toSection(3)} onBack={() => toSection(1)} />)}
       </AnimatePresence>
     </div>
   )
