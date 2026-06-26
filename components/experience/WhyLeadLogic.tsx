@@ -8,6 +8,10 @@ import { ShapesIllustration } from '@/components/illustrations/ShapesIllustratio
 import { ConstellationIllustration } from '@/components/illustrations/ConstellationIllustration'
 import { MorphIllustration } from '@/components/illustrations/MorphIllustration'
 import { FlowIllustration } from '@/components/illustrations/FlowIllustration'
+import { LaunchIllustration } from '@/components/illustrations/LaunchIllustration'
+import { DuoIllustration } from '@/components/illustrations/DuoIllustration'
+import { StackIllustration } from '@/components/illustrations/StackIllustration'
+import { EyeIllustration } from '@/components/illustrations/EyeIllustration'
 import { ZapIllustration } from '@/components/illustrations/ZapIllustration'
 import { ChipIllustration } from '@/components/illustrations/ChipIllustration'
 import { FlaskIllustration } from '@/components/illustrations/FlaskIllustration'
@@ -88,7 +92,23 @@ const CHAPTERS: Chapter[] = [
       { text: 'Daar wil ik onderdeel van uitmaken.', style: 'emphasis' },
     ],
   },
-  // 5 — Why LeadLogic specifically
+  // 5 — Wat ik meebreng
+  {
+    label: 'Wat ik meebreng:',
+    qualities: [
+      {
+        text: 'Drie producten (+ portfolio) gemaakt in één week.',
+        Illustration: LaunchIllustration,
+      },
+      { text: 'AI als co-pilot, niet als vervanging.', Illustration: DuoIllustration },
+      { text: 'Next.js, React.js, TypeScript & Tailwind CSS.', Illustration: StackIllustration },
+      {
+        text: 'Design, animaties en user experience — met aandacht voor detail.',
+        Illustration: EyeIllustration,
+      },
+    ],
+  },
+  // 6 — Why LeadLogic specifically
   {
     label: 'Waarom LeadLogic?',
     qualities: [
