@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion, type Target, type Transition } from 'framer-motion'
 
 interface Props {
   className?: string
@@ -9,7 +9,11 @@ interface Props {
 export function ShapesIllustration({ className }: Props) {
   const reduce = useReducedMotion()
 
-  const float = (yVals: number[], duration: number, delay = 0) => ({
+  const float = (
+    yVals: number[],
+    duration: number,
+    delay = 0
+  ): { animate: Target; transition: Transition } => ({
     animate: reduce ? {} : { y: yVals },
     transition: reduce ? {} : { duration, delay, repeat: Infinity, ease: 'easeInOut' },
   })
