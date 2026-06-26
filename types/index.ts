@@ -18,5 +18,6 @@ export interface LogEntry {
   time: string
   title: string
   description?: string
+  url?: string
   preview: LogPreview
 }

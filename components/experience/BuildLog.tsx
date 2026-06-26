@@ -369,14 +369,26 @@ export function BuildLog({ onNext, onBack }: Props) {
                 className={`absolute inset-0 flex items-center justify-center ${active.preview.src ? 'p-3' : 'p-6'}`}
               >
                 {active.preview.src ? (
-                  <div className="relative h-full w-full overflow-hidden rounded-xl">
+                  <a
+                    href={active.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`group relative block h-full w-full overflow-hidden rounded-xl ${active.url ? 'cursor-pointer' : 'cursor-default'}`}
+                  >
                     <Image
                       src={active.preview.src}
                       alt={active.title}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     />
-                  </div>
+                    {active.url && (
+                      <div className="absolute inset-0 flex items-end justify-end bg-gradient-to-t from-black/40 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        <span className="rounded-full border border-white/20 bg-black/50 px-3 py-1 font-mono text-[10px] text-white/80 backdrop-blur-sm">
+                          ↗ openen
+                        </span>
+                      </div>
+                    )}
+                  </a>
                 ) : (
                   <div className="w-full max-w-md">
                     <PreviewContent entry={active} />
