@@ -9,13 +9,10 @@ interface Props {
 export function ShapesIllustration({ className }: Props) {
   const reduce = useReducedMotion()
 
-  const float = (yVals: number[], duration: number, delay = 0) =>
-    reduce
-      ? {}
-      : {
-          animate: { y: yVals },
-          transition: { duration, delay, repeat: Infinity, ease: 'easeInOut' },
-        }
+  const float = (yVals: number[], duration: number, delay = 0) => ({
+    animate: reduce ? {} : { y: yVals },
+    transition: reduce ? {} : { duration, delay, repeat: Infinity, ease: 'easeInOut' },
+  })
 
   return (
     <svg viewBox="0 0 108 80" fill="none" aria-hidden="true" className={className}>
